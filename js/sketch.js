@@ -4,12 +4,13 @@ let x = window.innerWidth/2;
 let y = window.innerHeight/2;
 let a = 20;
 function setup() {
-    createCanvas(windowWidth*0.9, windowHeight*0.9);
-    strokeWeight(2);
+    createCanvas(windowWidth*0.95, windowHeight*0.95);
+    strokeWeight(4);
+    frameRate(15);
 }
   
 function draw() {
-  background(250, 1);
+  background(255, 2);
   let prevX = x;
   let prevY = y;
   // x += random([-7, 0, 7]);
@@ -25,7 +26,7 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth*0.9, windowHeight*0.9);
+  resizeCanvas(windowWidth*0.95, windowHeight*0.95);
   x = windowWidth / 2;
   y = windowHeight / 2;
 }
