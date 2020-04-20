@@ -1,12 +1,13 @@
-let x = 200;
-let y = 200;
-
 let dir = [[-1, 0], [0, -1], [1, 0], [0, 1]];
 
+let x = window.innerWidth/2;
+let y = window.innerHeight/2;
+let a = 20;
 function setup() {
-    createCanvas(x * 2, y * 2);
-  }
-
+    createCanvas(windowWidth*0.9, windowHeight*0.9);
+    strokeWeight(2);
+}
+  
 function draw() {
   background(250, 1);
   let prevX = x;
@@ -15,12 +16,18 @@ function draw() {
   // y += random([-7, 0, 7]);
   // let z = 10 *random([[-1, 0], [0, -1], [1, 0], [0, 1]]); 
   let r =  random([0,1,2,3]);
-  x += 10*dir[r][0];
-  y += 10*dir[r][1];
+  x += a*dir[r][0];
+  y += a*dir[r][1];
   
   
   stroke(random(255), random(255), random(255));
   line(prevX, prevY, x, y);  
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth*0.9, windowHeight*0.9);
+  x = windowWidth / 2;
+  y = windowHeight / 2;
 }
 
 // function setup() {
